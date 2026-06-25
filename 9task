@@ -1,0 +1,11 @@
+def top_k_students(students: list, k: int) -> list:
+    sorted_students = sorted(students, key=lambda x: (-x['score'], x['name']))
+    return [student['name'] for student in sorted_students[:k]]
+
+students_list = [
+    {"name": "Anna", "score": 95},
+    {"name": "Dmytro", "score": 98},
+    {"name": "Ivan", "score": 95},
+    {"name": "Olha", "score": 100}
+]
+print(top_k_students(students_list, 3))
