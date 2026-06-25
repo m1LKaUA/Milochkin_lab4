@@ -1,0 +1,12 @@
+def min_max_normalize(numbers: list) -> list:
+    if not numbers:
+        return []
+    min_val = min(numbers)
+    max_val = max(numbers)
+    diff = max_val - min_val
+    if diff == 0:
+        return [0.0] * len(numbers)
+    return list(map(lambda x: (x - min_val) / diff, numbers))
+
+print(min_max_normalize([10, 20, 30, 40, 50]))
+print(min_max_normalize([5, 5, 5]))
