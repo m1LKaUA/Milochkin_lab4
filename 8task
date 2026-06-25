@@ -1,0 +1,6 @@
+from functools import reduce
+
+def char_frequency(s: str) -> dict:
+    return reduce(lambda acc, char: {**acc, char: acc.get(char, 0) + 1}, s, {})
+
+print(char_frequency("hello"))
