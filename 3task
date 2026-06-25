@@ -1,0 +1,12 @@
+def is_strong_password(password: str) -> bool:
+    checks = [
+        len(password) >= 8,
+        any(c.isupper() for c in password),
+        any(c.islower() for c in password),
+        any(c.isdigit() for c in password),
+        any(c in "!@#$%^&*()-_=+[{]};:'\",<.>/?`~|\\" for c in password)
+    ]
+    return all(checks)
+
+print(is_strong_password("Pass123!"))
+print(is_strong_password("weak"))
