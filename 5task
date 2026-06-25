@@ -1,0 +1,6 @@
+def has_prime(numbers: list) -> bool:
+    is_prime = lambda n: n > 1 and all(n % i != 0 for i in range(2, int(n**0.5) + 1))
+    return any(is_prime(x) for x in numbers)
+
+print(has_prime([4, 6, 8, 11, 12]))
+print(has_prime([4, 6, 8, 9, 10]))
