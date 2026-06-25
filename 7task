@@ -1,0 +1,6 @@
+def filter_emails(emails: list) -> list:
+    is_valid = lambda s: '@' in s and '.' in s.split('@')[1] if len(s.split('@')) == 2 else False
+    return list(filter(is_valid, emails))
+
+data = ["test@gmail.com", "invalid@email", "another.test@ukr.net", "plain_text", "abc@.com"]
+print(filter_emails(data))
