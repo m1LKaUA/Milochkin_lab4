@@ -1,0 +1,8 @@
+def all_close(numbers: list, tol: float) -> bool:
+    if not numbers:
+        return True
+    first = numbers[0]
+    return all(abs(x - first) <= tol for x in numbers)
+
+print(all_close([10.0, 10.1, 9.9], 0.2))
+print(all_close([10.0, 10.5, 9.9], 0.2))
